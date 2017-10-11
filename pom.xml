@@ -38,6 +38,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <jackson.version>1.9.10</jackson.version>
     </properties>
 
     <build>
