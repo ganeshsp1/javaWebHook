@@ -87,11 +87,6 @@ public class WebhookResponse {
         return source;
     }
 
-    public void setSource (String source)
-    {
-        this.source = source;
-    }
-
     public String getDisplayText ()
     {
         return displayText;
