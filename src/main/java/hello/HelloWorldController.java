@@ -1,6 +1,6 @@
 package hello;
 
-import main.vo.ApiAiRQ;
+import main.java.vo.ApiAiRQ;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;

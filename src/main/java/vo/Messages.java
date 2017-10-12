@@ -1,4 +1,4 @@
-package main.vo;
+package main.java.vo;
 public class Messages
 {
     private String id;

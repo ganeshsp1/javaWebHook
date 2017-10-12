@@ -1,4 +1,4 @@
-package main.vo;
+package main.java.vo;
 public class Result
 {
     private String actionIncomplete;
