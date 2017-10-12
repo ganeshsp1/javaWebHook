@@ -3,7 +3,7 @@ package hello;
 public class WebhookResponse {
     private final String speech;
     private final String displayText;
-    private final textToSpeech;
+    private final String textToSpeech;
 
     private final String source = "java-webhook";
 
