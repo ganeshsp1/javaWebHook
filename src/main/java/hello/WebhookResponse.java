@@ -39,7 +39,6 @@ public class WebhookResponse {
 //		data.setGoogle(google );.
     	setSpeech(speech);
     	setDisplayText(displayText);
-    	setSource(source);
     	
     	Messages message = new Messages();
     	message.setType("simple_response");
