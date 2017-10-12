@@ -16,8 +16,6 @@ public class WebhookResponse {
 //    private final String textToSpeech;
 	 private String speech;
 
-	    private String source;
-
 	    private String displayText;
 
 	    private Messages[] messages;
