@@ -10,7 +10,7 @@ public class WebhookResponse {
     public WebhookResponse(String speech, String displayText) {
         this.speech = speech;
         this.displayText = displayText;
-        this.textToSpeech = "texttoSpeech"
+        this.textToSpeech = "texttoSpeech";
     }
     public String getTextToSpeech() {
         return textToSpeech;
