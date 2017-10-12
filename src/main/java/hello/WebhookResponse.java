@@ -6,7 +6,6 @@ import main.java.vo.Image;
 import main.java.vo.Items;
 import main.java.vo.Messages;
 import main.java.vo.OptionInfo;
-import main.java.vo.Response;
 import main.java.vo.Rich_response;
 import main.java.vo.Simple_response;
 
@@ -15,7 +14,13 @@ public class WebhookResponse {
 //    private final String speech;
 //    private final String displayText;
 //    private final String textToSpeech;
-	private final Response response;
+	 private String speech;
+
+	    private String source;
+
+	    private String displayText;
+
+	    private Messages[] messages;
     private final String source = "java-webhook";
     private Data data;
     public WebhookResponse(String speech, String displayText) {
@@ -34,10 +39,9 @@ public class WebhookResponse {
 //		rich_response.setItems(items );
 //		google.setRich_response(rich_response );
 //		data.setGoogle(google );.
-    	response = new Response();
-    	response.setSpeech(speech);
-    	response.setDisplayText(displayText);
-    	response.setSource(source);
+    	setSpeech(speech);
+    	setDisplayText(displayText);
+    	setSource(source);
     	
     	Messages message = new Messages();
     	message.setType("simple_response");
@@ -65,13 +69,50 @@ public class WebhookResponse {
 		message1.setItems(items );
     	
     	Messages[] messages = {message,message1};
-		response.setMessages(messages);
+		setMessages(messages);
     }
 
-    public Response getResponse(){
-    	return response;
+
+
+    public String getSpeech ()
+    {
+        return speech;
     }
 
+    public void setSpeech (String speech)
+    {
+        this.speech = speech;
+    }
+
+    public String getSource ()
+    {
+        return source;
+    }
+
+    public void setSource (String source)
+    {
+        this.source = source;
+    }
+
+    public String getDisplayText ()
+    {
+        return displayText;
+    }
+
+    public void setDisplayText (String displayText)
+    {
+        this.displayText = displayText;
+    }
+
+    public Messages[] getMessages ()
+    {
+        return messages;
+    }
+
+    public void setMessages (Messages[] messages)
+    {
+        this.messages = messages;
+    }
 //    public Data getdata ()
 //    {
 //        return data;
