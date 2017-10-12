@@ -21,6 +21,6 @@ public class HelloWorldController {
         System.out.println(obj);
         Gson gson = new Gson();
         ApiAiRQ aiRQ= gson.fromJson(obj, ApiAiRQ.class);
-        return new WebhookResponse("Hello_fromSystem! "+ aiRQ.getLang(), "Test" );
+        return new WebhookResponse("Hello_fromSystem! "+  aiRQ.getStatus(), "Test" );
     }
 }
