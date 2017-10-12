@@ -17,7 +17,8 @@ public class HelloWorldController {
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
 
         System.out.println(obj);
-        obj.replace("-", "");
+        obj=obj.replace("-", "");
+        System.out.println(obj);
         Gson gson = new Gson();
         ApiAiRQ aiRQ= gson.fromJson(obj, ApiAiRQ.class);
         return new WebhookResponse("Hello_fromSystem! "+ aiRQ.getLang(), "Test " );
