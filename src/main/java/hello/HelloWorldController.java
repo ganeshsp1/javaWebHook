@@ -29,6 +29,7 @@ public class HelloWorldController {
         ApiAiRQ aiRQ = new ApiAiRQ();
         try {
             ObjectMapper mapper = new ObjectMapper();
+            mapper.setSerializationInclusion(Include.NON_NULL);
         aiRQ = mapper.readValue(obj, ApiAiRQ.class);
         
         } catch (JsonGenerationException e) {
