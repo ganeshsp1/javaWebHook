@@ -20,6 +20,7 @@ public class HelloWorldController {
         obj=obj.replace("-", "");
         System.out.println(obj);
         Gson gson = new GsonBuilder().serializeNulls().create();
+        
         ApiAiRQ aiRQ= gson.fromJson(obj, ApiAiRQ.class);
         return new WebhookResponse("Hello_fromSystem! "+  aiRQ.getStatus(), "Test" );
     }
