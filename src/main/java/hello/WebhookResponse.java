@@ -38,8 +38,8 @@ public class WebhookResponse {
 //		rich_response.setItems(items );
 //		google.setRich_response(rich_response );
 //		data.setGoogle(google );.
-    	setSpeech(speech);
-    	setDisplayText(speech);
+    	setSpeech("Hey this is what I found");
+    	setDisplayText("Hey this is what I found!");
     	
     	Messages message = new Messages();
     	message.setType("0");
