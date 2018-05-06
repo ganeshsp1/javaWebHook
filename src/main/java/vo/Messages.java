@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Messages
 {
+    private String type;
+    
     private String platform;
 
     private String speech;
@@ -17,8 +19,6 @@ public class Messages
     private String subtitle;
 
     private Buttons[] buttons;
-
-    private String type;
 
     public String getPlatform ()
     {
