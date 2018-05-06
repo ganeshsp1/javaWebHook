@@ -1,21 +1,22 @@
 package main.java.vo;
 public class Parameters
 {
-    private String geocity;
+    private String url;
 
-    public String getGeocity ()
+    public String getUrl ()
     {
-        return geocity;
+        return url;
     }
 
-    public void setGeocity (String geocity)
+    public void setUrl (String url)
     {
-        this.geocity = geocity;
+        this.url = url;
     }
 
     @Override
     public String toString()
     {
-        return "ClassPojo [geo-city = "+geocity+"]";
+        return "ClassPojo [url = "+url+"]";
     }
 }
+	
