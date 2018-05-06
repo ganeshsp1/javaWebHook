@@ -7,6 +7,10 @@ public class OutputContexts
 {
     private String name;
 
+    private Parameters parameters;
+
+    private String lifespanCount;
+
     public String getName ()
     {
         return name;
@@ -17,10 +21,29 @@ public class OutputContexts
         this.name = name;
     }
 
+    public Parameters getParameters ()
+    {
+        return parameters;
+    }
+
+    public void setParameters (Parameters parameters)
+    {
+        this.parameters = parameters;
+    }
+
+    public String getLifespanCount ()
+    {
+        return lifespanCount;
+    }
+
+    public void setLifespanCount (String lifespanCount)
+    {
+        this.lifespanCount = lifespanCount;
+    }
+
     @Override
     public String toString()
     {
-        return "ClassPojo [name = "+name+"]";
-    }
-}
+        return "ClassPojo [name = "+name+", parameters = "+parameters+", lifespanCount = "+lifespanCount+"]";
+    }}
 	

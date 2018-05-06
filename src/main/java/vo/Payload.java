@@ -13,6 +13,30 @@ public class Payload
 
     private AvailableSurfaces[] availableSurfaces;
 
+    private Google google;
+
+    private Telegram telegram;
+
+    public Google getGoogle ()
+    {
+        return google;
+    }
+
+    public void setGoogle (Google google)
+    {
+        this.google = google;
+    }
+
+    public Telegram getTelegram ()
+    {
+        return telegram;
+    }
+
+    public void setTelegram (Telegram telegram)
+    {
+        this.telegram = telegram;
+    }
+
     public Surface getSurface ()
     {
         return surface;

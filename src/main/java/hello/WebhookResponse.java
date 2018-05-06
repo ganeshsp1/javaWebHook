@@ -1,14 +1,21 @@
 package hello;
 
 import vo.Buttons;
+import vo.Card;
 import vo.Data;
+import vo.FollowupEventInput;
+import vo.FulfillmentMessages;
 import vo.Google;
-import vo.Image;
 import vo.Items;
+import vo.Message;
 import vo.Messages;
-import vo.OptionInfo;
+import vo.OutputContexts;
+import vo.Payload;
+import vo.RichResponse;
 import vo.Rich_response;
+import vo.SimpleResponse;
 import vo.Simple_response;
+import vo.Telegram;
 
 
 public class WebhookResponse {
@@ -20,8 +27,19 @@ public class WebhookResponse {
 	    private String displayText;
 
 	    private Messages[] messages;
-    private final String source = "java-webhook";
+    private String source = "java-webhook";
     private Data data;
+    
+    private FollowupEventInput followupEventInput;
+
+    private OutputContexts[] outputContexts;
+    
+    private Payload payload;
+
+    private String fulfillmentText;
+
+    private FulfillmentMessages[] fulfillmentMessages;
+    
     public WebhookResponse(String speech, String url, String action) {
 //        this.speech = speech;
 //        this.displayText = displayText;
@@ -41,26 +59,62 @@ public class WebhookResponse {
     	
     	if(action.equals("test")){
     		
-    		this.speech = speech;
-          this.displayText = displayText;
-          this.data = new Data();
-          Google google = new Google();
-          google.setExpect_user_response("true");
-          Rich_response rich_response = new Rich_response();
-          Simple_response simple_response = new Simple_response();
-          simple_response.setText_to_speech("This is a sample text");
-          Items item = new Items();
-          item.setSimple_response(simple_response);
-          Items[] items = {item};
-  		rich_response.setItems(items );
-  		google.setRich_response(rich_response );
-
-		Messages message = new Messages();
-  		message.setType("simple_response");
-    	message.setPlatform("google");
-    	message.setTextToSpeech("Hi");
-    	message.setSpeech("Hi");
-    		setMessages(messages);
+    		this.fulfillmentText = "This is a text response.";
+    		FulfillmentMessages fulfillmentMessage1 = new FulfillmentMessages();
+    		Card card = new Card();
+    		card.setTitle("card title");
+    		card.setSubtitle("card text");
+    		card.setImageUri("https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png");
+    		Buttons button = new Buttons();
+    		button.setText("button text");
+    		button.setPostback("https://assistant.google.com/");
+			Buttons[] buttons = {button };
+			card.setButtons(buttons );
+			fulfillmentMessage1.setCard(card );
+			FulfillmentMessages[] fulfillmentMessages = {fulfillmentMessage1};
+    		this.setFulfillmentMessages(fulfillmentMessages);
+    		payload = new Payload();
+    		Google google = new Google();
+    		google.setExpectUserResponse("true");
+    		RichResponse richResponse = new RichResponse();
+    		Items item = new Items();
+    		SimpleResponse simpleResponse = new SimpleResponse();
+    		simpleResponse.setTextToSpeech("this is a simple response");
+			item.setSimpleResponse(simpleResponse );
+			Items[] items = {item};
+			richResponse.setItems(items );
+			google.setRichResponse(richResponse);
+			payload.setGoogle(google );
+    		setPayload(payload);
+    		Telegram telegram = new Telegram();
+    		telegram.setText("Hello, telegram!");
+    		payload.setTelegram(telegram );
+    		
+    		
+    		
+    		
+    		
+    		
+//    		this.speech = speech;
+//          this.displayText = displayText;
+//          this.data = new Data();
+//          Google google = new Google();
+//          google.setExpect_user_response("true");
+//          Rich_response rich_response = new Rich_response();
+//          Simple_response simple_response = new Simple_response();
+//          simple_response.setText_to_speech("This is a sample text");
+//          Items item = new Items();
+//          item.setSimple_response(simple_response);
+//          Items[] items = {item};
+//  		rich_response.setItems(items );
+//  		google.setRich_response(rich_response );
+//
+//		Messages message = new Messages();
+//  		message.setType("simple_response");
+//    	message.setPlatform("google");
+//    	message.setTextToSpeech("Hi");
+//    	message.setSpeech("Hi");
+//    		setMessages(messages);
     	}else {
     		
     	setSpeech("Hey this is what I found");
@@ -169,5 +223,77 @@ public class WebhookResponse {
 //    public String getSource() {
 //        return source;
 //    }
+
+
+
+	public Data getData() {
+		return data;
+	}
+
+
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+
+
+	public FollowupEventInput getFollowupEventInput() {
+		return followupEventInput;
+	}
+
+
+
+	public void setFollowupEventInput(FollowupEventInput followupEventInput) {
+		this.followupEventInput = followupEventInput;
+	}
+
+
+
+	public OutputContexts[] getOutputContexts() {
+		return outputContexts;
+	}
+
+
+
+	public void setOutputContexts(OutputContexts[] outputContexts) {
+		this.outputContexts = outputContexts;
+	}
+
+
+
+	public Payload getPayload() {
+		return payload;
+	}
+
+
+
+	public void setPayload(Payload payload) {
+		this.payload = payload;
+	}
+
+
+
+	public String getFulfillmentText() {
+		return fulfillmentText;
+	}
+
+
+
+	public void setFulfillmentText(String fulfillmentText) {
+		this.fulfillmentText = fulfillmentText;
+	}
+
+
+
+	public FulfillmentMessages[] getFulfillmentMessages() {
+		return fulfillmentMessages;
+	}
+
+
+
+	public void setFulfillmentMessages(FulfillmentMessages[] fulfillmentMessages) {
+		this.fulfillmentMessages = fulfillmentMessages;
+	}
 }
 

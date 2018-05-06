@@ -11,6 +11,19 @@ public class Items
     private OptionInfo optionInfo;
 
     private Image image;
+    
+
+    private SimpleResponse simpleResponse;
+
+    public SimpleResponse getSimpleResponse ()
+    {
+        return simpleResponse;
+    }
+
+    public void setSimpleResponse (SimpleResponse simpleResponse)
+    {
+        this.simpleResponse = simpleResponse;
+    }
     public Simple_response getSimple_response ()
     {
         return simple_response;
