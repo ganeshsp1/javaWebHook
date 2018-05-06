@@ -2,6 +2,7 @@ package hello;
 
 import vo.ApiAiRQ;
 import vo.OriginalRequest;
+import vo.QueryResult;
 import vo.Result;
 
 import org.springframework.stereotype.Controller;
@@ -30,12 +31,12 @@ public class HelloWorldController {
 //        ApiAiRQ aiRQ= gson.fromJson(obj, ApiAiRQ.class);
         ApiAiRQ aiRQ = new ApiAiRQ();
         String url = "";
-        Result result = new Result();
+        QueryResult result = new  QueryResult();
 		try {
             ObjectMapper mapper = new ObjectMapper();
             mapper.setSerializationInclusion(Include.NON_NULL);
         aiRQ = mapper.readValue(obj, ApiAiRQ.class);
-        result = aiRQ.getResult();
+        result = aiRQ.getQueryResult();
         url = result.getParameters().getUrl();
         } catch (JsonGenerationException e) {
 			e.printStackTrace();

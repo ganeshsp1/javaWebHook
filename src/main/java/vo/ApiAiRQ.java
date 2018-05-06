@@ -18,8 +18,48 @@ public class ApiAiRQ
     private OriginalRequest originalRequest;
 
     private String lang;
+    
+	private String responseId;
 
-    public String getTimestamp ()
+    private String session;
+
+    private QueryResult queryResult;
+
+    private OriginalDetectIntentRequest originalDetectIntentRequest;
+
+
+    public String getResponseId() {
+		return responseId;
+	}
+
+	public void setResponseId(String responseId) {
+		this.responseId = responseId;
+	}
+
+	public String getSession() {
+		return session;
+	}
+
+	public void setSession(String session) {
+		this.session = session;
+	}
+
+	public QueryResult getQueryResult() {
+		return queryResult;
+	}
+
+	public void setQueryResult(QueryResult queryResult) {
+		this.queryResult = queryResult;
+	}
+
+	public OriginalDetectIntentRequest getOriginalDetectIntentRequest() {
+		return originalDetectIntentRequest;
+	}
+
+	public void setOriginalDetectIntentRequest(OriginalDetectIntentRequest originalDetectIntentRequest) {
+		this.originalDetectIntentRequest = originalDetectIntentRequest;
+	}
+	public String getTimestamp ()
     {
         return timestamp;
     }
