@@ -30,11 +30,12 @@ public class HelloWorldController {
 //        ApiAiRQ aiRQ= gson.fromJson(obj, ApiAiRQ.class);
         ApiAiRQ aiRQ = new ApiAiRQ();
         String url = "";
+        Result result = new Result();
 		try {
             ObjectMapper mapper = new ObjectMapper();
             mapper.setSerializationInclusion(Include.NON_NULL);
         aiRQ = mapper.readValue(obj, ApiAiRQ.class);
-        Result result = aiRQ.getResult();
+        result = aiRQ.getResult();
         url = result.getParameters().getUrl();
         } catch (JsonGenerationException e) {
 			e.printStackTrace();
@@ -43,6 +44,6 @@ public class HelloWorldController {
 		}	 catch (IOException e) {
 			e.printStackTrace();
 		}
-        return new WebhookResponse("Hello_fromSystem! "+  aiRQ.getStatus(), url );        
+        return new WebhookResponse("Hello_fromSystem! "+  aiRQ.getStatus(), url ,result.getAction());        
     }
 }

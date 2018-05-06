@@ -22,7 +22,7 @@ public class WebhookResponse {
 	    private Messages[] messages;
     private final String source = "java-webhook";
     private Data data;
-    public WebhookResponse(String speech, String url) {
+    public WebhookResponse(String speech, String url, String action) {
 //        this.speech = speech;
 //        this.displayText = displayText;
 //        this.textToSpeech = "texttoSpeech";
@@ -38,6 +38,29 @@ public class WebhookResponse {
 //		rich_response.setItems(items );
 //		google.setRich_response(rich_response );
 //		data.setGoogle(google );.
+    	
+    	if(action.equals("test")){
+    		
+    		this.speech = speech;
+          this.displayText = displayText;
+          this.data = new Data();
+          Google google = new Google();
+          google.setExpect_user_response("true");
+          Rich_response rich_response = new Rich_response();
+          Simple_response simple_response = new Simple_response();
+          simple_response.setText_to_speech("This is a sample text");
+          Items item = new Items();
+          item.setSimple_response(simple_response);
+          Items[] items = {item};
+  		rich_response.setItems(items );
+  		google.setRich_response(rich_response );
+
+		Messages message = new Messages();
+  		message.setType("simple_response");
+    	message.setPlatform("google");
+    	message.setTextToSpeech("Hi");
+    		setMessages(messages);
+    	}else {
     	setSpeech("Hey this is what I found");
     	setDisplayText("Hey this is what I found!");
     	
@@ -86,6 +109,7 @@ public class WebhookResponse {
     	
     	Messages[] messages = {message,message1,message3};
 		setMessages(messages);
+    	}
     }
 
 

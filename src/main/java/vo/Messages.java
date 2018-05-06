@@ -19,6 +19,8 @@ public class Messages
     private String subtitle;
 
     private Buttons[] buttons;
+    
+    private String textToSpeech;
 
     public String getPlatform ()
     {
@@ -105,4 +107,12 @@ public class Messages
     {
         return "ClassPojo [platform = "+platform+", speech = "+speech+", title = "+title+", items = "+items+", imageUrl = "+imageUrl+", subtitle = "+subtitle+", buttons = "+buttons+", type = "+type+"]";
     }
+
+	public String getTextToSpeech() {
+		return textToSpeech;
+	}
+
+	public void setTextToSpeech(String textToSpeech) {
+		this.textToSpeech = textToSpeech;
+	}
 }
