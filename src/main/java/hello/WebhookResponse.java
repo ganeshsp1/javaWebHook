@@ -50,7 +50,7 @@ public class WebhookResponse {
 //		google.setRich_response(rich_response );
 //		data.setGoogle(google );.
     	
-    	if(result.equals("test")){
+    	if(result.getAction().equals("test")){
     		
     		this.fulfillmentText = "This is a text response.";
     		FulfillmentMessages fulfillmentMessage1 = new FulfillmentMessages();
