@@ -1,4 +1,4 @@
-package main.java.vo;
+package vo;
 public class Image
 {
     private String accessibility_text;

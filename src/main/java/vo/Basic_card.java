@@ -1,4 +1,4 @@
-package main.java.vo;
+package vo;
 public class Basic_card
 {
     private Image image;

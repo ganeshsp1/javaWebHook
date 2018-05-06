@@ -1,4 +1,4 @@
-package main.java.vo;
+package vo;
 public class Simple_response
 {
     private String text_to_speech;

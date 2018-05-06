@@ -1,4 +1,4 @@
-package main.java.vo;
+package vo;
 public class Surface
 {
     private Capabilities[] capabilities;

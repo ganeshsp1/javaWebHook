@@ -1,4 +1,4 @@
-package main.java.vo;
+package vo;
 public class Items
 {
     private Simple_response simple_response;

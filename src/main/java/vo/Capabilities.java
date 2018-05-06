@@ -1,4 +1,4 @@
-package main.java.vo;
+package vo;
 public class Capabilities
 {
     private String name;

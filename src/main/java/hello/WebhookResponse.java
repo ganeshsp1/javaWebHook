@@ -1,13 +1,13 @@
 package hello;
 
-import main.java.vo.Data;
-import main.java.vo.Google;
-import main.java.vo.Image;
-import main.java.vo.Items;
-import main.java.vo.Messages;
-import main.java.vo.OptionInfo;
-import main.java.vo.Rich_response;
-import main.java.vo.Simple_response;
+import vo.Data;
+import vo.Google;
+import vo.Image;
+import vo.Items;
+import vo.Messages;
+import vo.OptionInfo;
+import vo.Rich_response;
+import vo.Simple_response;
 
 
 public class WebhookResponse {
@@ -41,10 +41,10 @@ public class WebhookResponse {
     	setDisplayText(displayText);
     	
     	Messages message = new Messages();
-    	message.setType("simple_response");
+    	Messages message1 = new Messages();
+    	/*message.setType("simple_response");
     	message.setPlatform("google");
     	message.setTextToSpeech("Hi");
-    	Messages message1 = new Messages();
     	message1.setType("carousel_card");
     	message1.setPlatform("google");
     	Items item1 = new Items();
@@ -63,7 +63,7 @@ public class WebhookResponse {
 		item1.setOptionInfo(optionInfo1 );
     	item1.setTitle("tajmahal 2");
 		Items[] items = {item1,item2};
-		message1.setItems(items );
+		message1.setItems(items );*/
     	
     	Messages[] messages = {message,message1};
 		setMessages(messages);

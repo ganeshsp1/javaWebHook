@@ -1,4 +1,4 @@
-package main.java.vo;
+package vo;
 public class Rich_response
 {
     private Items[] items;

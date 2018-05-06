@@ -1,4 +1,4 @@
-package main.java.vo;
+package vo;
 public class Google
 {
     private String expect_user_response;
