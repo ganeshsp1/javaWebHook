@@ -15,6 +15,8 @@ public class Data
 
     private String update_id;
 
+    private Message message;
+
     public Surface getSurface ()
     {
         return surface;
@@ -84,7 +86,15 @@ public class Data
         this.update_id = update_id;
     }
 
-    @Override
+    public Message getMessage() {
+		return message;
+	}
+
+	public void setMessage(Message message) {
+		this.message = message;
+	}
+
+	@Override
     public String toString()
     {
         return "ClassPojo [surface = "+surface+", inputs = "+inputs+", isInSandbox = "+isInSandbox+", conversation = "+conversation+", user = "+user+", availableSurfaces = "+availableSurfaces+"]";
