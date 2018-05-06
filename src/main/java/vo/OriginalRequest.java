@@ -1,3 +1,4 @@
+package main.java.vo;
 public class OriginalRequest
 {
     private String source;
