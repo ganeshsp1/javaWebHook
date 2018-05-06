@@ -1,4 +1,7 @@
 package vo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Buttons
 {
     private String text;

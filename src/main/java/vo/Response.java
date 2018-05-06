@@ -1,4 +1,7 @@
 package vo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Response
 {
     private String speech;

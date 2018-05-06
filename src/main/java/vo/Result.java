@@ -1,4 +1,7 @@
 package vo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Result
 {
     private String actionIncomplete;
@@ -15,7 +18,7 @@ public class Result
 
     private String resolvedQuery;
 
-    private String[] contexts;
+    private Contexts[] contexts;
 
     private Parameters parameters;
 
@@ -91,13 +94,14 @@ public class Result
         this.resolvedQuery = resolvedQuery;
     }
 
-    public String[] getContexts ()
+    public Contexts[] getContexts ()
     {
         return contexts;
     }
 
-    public void setContexts (String[] contexts)
+    public void setContexts (Contexts[] contexts)
     {
+    	
         this.contexts = contexts;
     }
 

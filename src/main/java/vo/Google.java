@@ -1,4 +1,7 @@
 package vo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Google
 {
     private String expect_user_response;

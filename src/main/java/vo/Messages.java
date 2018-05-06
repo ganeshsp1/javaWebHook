@@ -1,4 +1,8 @@
-package vo;public class Messages
+package vo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Messages
 {
     private String platform;
 

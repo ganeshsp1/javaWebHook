@@ -1,4 +1,7 @@
 package vo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Items
 {
     private Simple_response simple_response;
@@ -47,10 +50,17 @@ public class Items
         this.image = image;
     }
 
-    @Override
-    public String toString()
+    private String description;
+
+    public String getDescription ()
     {
-        return "ClassPojo [title = "+title+", optionInfo = "+optionInfo+", image = "+image+","+"simple_response = "+simple_response+"]";
+        return description;
     }
+
+    public void setDescription (String description)
+    {
+        this.description = description;
+    }
+
 }
 	
