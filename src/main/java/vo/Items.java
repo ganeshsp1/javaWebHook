@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Items
 {
-    private Simple_response simple_response;
     
     private String title;
 
@@ -23,15 +22,6 @@ public class Items
     public void setSimpleResponse (SimpleResponse simpleResponse)
     {
         this.simpleResponse = simpleResponse;
-    }
-    public Simple_response getSimple_response ()
-    {
-        return simple_response;
-    }
-
-    public void setSimple_response (Simple_response simple_response)
-    {
-        this.simple_response = simple_response;
     }
     public String getTitle ()
     {

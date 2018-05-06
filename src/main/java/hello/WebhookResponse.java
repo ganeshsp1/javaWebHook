@@ -1,25 +1,20 @@
 package hello;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import vo.Buttons;
 import vo.Card;
-import vo.Data;
 import vo.FollowupEventInput;
 import vo.FulfillmentMessages;
 import vo.Google;
 import vo.Items;
-import vo.Message;
 import vo.Messages;
 import vo.OutputContexts;
 import vo.Payload;
 import vo.QueryResult;
 import vo.RichResponse;
-import vo.Rich_response;
 import vo.SimpleResponse;
-import vo.Simple_response;
 import vo.Telegram;
-
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
