@@ -59,8 +59,10 @@ public class WebhookResponse {
   		message.setType("simple_response");
     	message.setPlatform("google");
     	message.setTextToSpeech("Hi");
+    	message.setSpeech("Hi");
     		setMessages(messages);
     	}else {
+    		
     	setSpeech("Hey this is what I found");
     	setDisplayText("Hey this is what I found!");
     	
