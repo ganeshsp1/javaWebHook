@@ -1,5 +1,6 @@
 package hello;
 
+import vo.Buttons;
 import vo.Data;
 import vo.Google;
 import vo.Image;
@@ -21,7 +22,7 @@ public class WebhookResponse {
 	    private Messages[] messages;
     private final String source = "java-webhook";
     private Data data;
-    public WebhookResponse(String speech, String displayText) {
+    public WebhookResponse(String speech, String url) {
 //        this.speech = speech;
 //        this.displayText = displayText;
 //        this.textToSpeech = "texttoSpeech";
@@ -38,10 +39,24 @@ public class WebhookResponse {
 //		google.setRich_response(rich_response );
 //		data.setGoogle(google );.
     	setSpeech(speech);
-    	setDisplayText(displayText);
+    	setDisplayText(speech);
     	
     	Messages message = new Messages();
+    	message.setType("0");
+    	message.setPlatform("telegram");
+    	message.setSpeech("Hey there!");    	
+    	
     	Messages message1 = new Messages();
+    	message.setType("1");
+    	message.setPlatform("telegram");
+    	message.setTitle("card title");
+    	message.setImageUrl(url);
+    	Buttons[] buttons = new Buttons[1];
+    	Buttons button = new Buttons();
+    	button.setText("button text");
+    	button.setPostback("https://stackoverflow.com/questions/21134960/what-does-changes-not-staged-for-commit-mean");
+    	buttons[0] = button;
+		message.setButtons(buttons );
     	/*message.setType("simple_response");
     	message.setPlatform("google");
     	message.setTextToSpeech("Hi");

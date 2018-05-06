@@ -1,6 +1,8 @@
 package hello;
 
 import vo.ApiAiRQ;
+import vo.OriginalRequest;
+import vo.Result;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,11 +29,13 @@ public class HelloWorldController {
 //        Gson gson = new Gson();
 //        ApiAiRQ aiRQ= gson.fromJson(obj, ApiAiRQ.class);
         ApiAiRQ aiRQ = new ApiAiRQ();
-        try {
+        String url = "";
+		try {
             ObjectMapper mapper = new ObjectMapper();
             mapper.setSerializationInclusion(Include.NON_NULL);
         aiRQ = mapper.readValue(obj, ApiAiRQ.class);
-        
+        Result result = aiRQ.getResult();
+        url = result.getParameters().getUrl();
         } catch (JsonGenerationException e) {
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
@@ -39,6 +43,6 @@ public class HelloWorldController {
 		}	 catch (IOException e) {
 			e.printStackTrace();
 		}
-        return new WebhookResponse("Hello_fromSystem! "+  aiRQ.getStatus(), "Test" );        
+        return new WebhookResponse("Hello_fromSystem! "+  aiRQ.getStatus(), url );        
     }
 }
