@@ -57,6 +57,10 @@ public class WebhookResponse {
     	button.setPostback("https://stackoverflow.com/questions/21134960/what-does-changes-not-staged-for-commit-mean");
     	buttons[0] = button;
 		message.setButtons(buttons );
+		
+		Messages message3 = new Messages();
+    	message3.setType("0");
+    	message3.setSpeech("Hey there!");    
     	/*message.setType("simple_response");
     	message.setPlatform("google");
     	message.setTextToSpeech("Hi");
@@ -80,7 +84,7 @@ public class WebhookResponse {
 		Items[] items = {item1,item2};
 		message1.setItems(items );*/
     	
-    	Messages[] messages = {message,message1};
+    	Messages[] messages = {message,message1,message3};
 		setMessages(messages);
     }
 
