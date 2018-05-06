@@ -19,18 +19,15 @@ import vo.Simple_response;
 import vo.Telegram;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class WebhookResponse {
 //    private final String speech;
 //    private final String displayText;
 //    private final String textToSpeech;
-	 private String speech;
-
-	    private String displayText;
-
-	    private Messages[] messages;
     private String source = "java-webhook";
-    private Data data;
-    
     private FollowupEventInput followupEventInput;
 
     private OutputContexts[] outputContexts;
@@ -118,8 +115,8 @@ public class WebhookResponse {
 //    		setMessages(messages);
     	}else {
     		
-    	setSpeech("Hey this is what I found");
-    	setDisplayText("Hey this is what I found!");
+//    	setSpeech("Hey this is what I found");
+//    	setDisplayText("Hey this is what I found!");
     	
     	Messages message = new Messages();
     	message.setType("0");
@@ -165,78 +162,17 @@ public class WebhookResponse {
 		message1.setItems(items );*/
     	
     	Messages[] messages = {message,message1,message3};
-		setMessages(messages);
+//		setMessages(messages);
     	}
     }
 
 
 
-    public String getSpeech ()
-    {
-        return speech;
-    }
-
-    public void setSpeech (String speech)
-    {
-        this.speech = speech;
-    }
 
     public String getSource ()
     {
         return source;
     }
-
-    public String getDisplayText ()
-    {
-        return displayText;
-    }
-
-    public void setDisplayText (String displayText)
-    {
-        this.displayText = displayText;
-    }
-
-    public Messages[] getMessages ()
-    {
-        return messages;
-    }
-
-    public void setMessages (Messages[] messages)
-    {
-        this.messages = messages;
-    }
-//    public Data getdata ()
-//    {
-//        return data;
-//    }
-//    public String getTextToSpeech() {
-//        return textToSpeech;
-//    }
-//    
-//    public String getSpeech() {
-//        return speech;
-//    }
-//
-//    public String getDisplayText() {
-//        return displayText;
-//    }
-//
-//    public String getSource() {
-//        return source;
-//    }
-
-
-
-	public Data getData() {
-		return data;
-	}
-
-
-
-	public void setData(Data data) {
-		this.data = data;
-	}
-
 
 
 	public FollowupEventInput getFollowupEventInput() {
