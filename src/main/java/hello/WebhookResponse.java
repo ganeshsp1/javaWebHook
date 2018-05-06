@@ -77,6 +77,7 @@ public class WebhookResponse {
 			Items[] items = {item};
 			richResponse.setItems(items );
 			google.setRichResponse(richResponse);
+			google.setText("google Text");
 			payload.setGoogle(google );
     		setPayload(payload);
     		Telegram telegram = new Telegram();

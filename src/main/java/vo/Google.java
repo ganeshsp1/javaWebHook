@@ -7,6 +7,8 @@ public class Google
     private RichResponse richResponse;
 
     private String expectUserResponse;
+    
+    private String text;
 
     public RichResponse getRichResponse ()
     {
@@ -27,4 +29,12 @@ public class Google
     {
         this.expectUserResponse = expectUserResponse;
     }
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
 }
