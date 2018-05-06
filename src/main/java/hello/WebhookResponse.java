@@ -11,6 +11,7 @@ import vo.Message;
 import vo.Messages;
 import vo.OutputContexts;
 import vo.Payload;
+import vo.QueryResult;
 import vo.RichResponse;
 import vo.Rich_response;
 import vo.SimpleResponse;
@@ -40,7 +41,7 @@ public class WebhookResponse {
 
     private FulfillmentMessages[] fulfillmentMessages;
     
-    public WebhookResponse(String speech, String url, String action) {
+    public WebhookResponse(String speech, String url, QueryResult result) {
 //        this.speech = speech;
 //        this.displayText = displayText;
 //        this.textToSpeech = "texttoSpeech";
@@ -57,7 +58,7 @@ public class WebhookResponse {
 //		google.setRich_response(rich_response );
 //		data.setGoogle(google );.
     	
-    	if(action.equals("test")){
+    	if(result.equals("test")){
     		
     		this.fulfillmentText = "This is a text response.";
     		FulfillmentMessages fulfillmentMessage1 = new FulfillmentMessages();
@@ -89,7 +90,7 @@ public class WebhookResponse {
     		Telegram telegram = new Telegram();
     		telegram.setText("Hello, telegram!");
     		payload.setTelegram(telegram );
-    		
+    		setOutputContexts(result.getOutputContexts());
     		
     		
     		
