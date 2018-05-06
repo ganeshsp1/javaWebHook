@@ -30,5 +30,4 @@ public class Messages
     {
         return "ClassPojo [speech = "+speech+", type = "+type+"]";
     }
-}
-}
+	}
