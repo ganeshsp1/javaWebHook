@@ -11,6 +11,8 @@ public class ApiAiRQ
 
     private Status status;
 
+    private OriginalRequest originalRequest;
+
     private String lang;
 
     public String getTimestamp ()
@@ -63,6 +65,16 @@ public class ApiAiRQ
         this.status = status;
     }
 
+    public OriginalRequest getOriginalRequest ()
+    {
+        return originalRequest;
+    }
+
+    public void setOriginalRequest (OriginalRequest originalRequest)
+    {
+        this.originalRequest = originalRequest;
+    }
+
     public String getLang ()
     {
         return lang;
@@ -76,7 +88,7 @@ public class ApiAiRQ
     @Override
     public String toString()
     {
-        return "ClassPojo [timestamp = "+timestamp+", id = "+id+", result = "+result+", sessionId = "+sessionId+", status = "+status+", lang = "+lang+"]";
+        return "ClassPojo [timestamp = "+timestamp+", id = "+id+", result = "+result+", sessionId = "+sessionId+", status = "+status+", originalRequest = "+originalRequest+", lang = "+lang+"]";
     }
 }
 			
