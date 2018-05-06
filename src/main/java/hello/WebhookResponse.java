@@ -47,16 +47,16 @@ public class WebhookResponse {
     	message.setSpeech("Hey there!");    	
     	
     	Messages message1 = new Messages();
-    	message.setType("1");
-    	message.setPlatform("telegram");
-    	message.setTitle("card title");
-    	message.setImageUrl(url);
+    	message1.setType("1");
+    	message1.setPlatform("telegram");
+    	message1.setTitle("card title");
+    	message1.setImageUrl(url);
     	Buttons[] buttons = new Buttons[1];
     	Buttons button = new Buttons();
     	button.setText("button text");
     	button.setPostback("https://stackoverflow.com/questions/21134960/what-does-changes-not-staged-for-commit-mean");
     	buttons[0] = button;
-		message.setButtons(buttons );
+    	message1.setButtons(buttons );
 		
 		Messages message3 = new Messages();
     	message3.setType("0");
