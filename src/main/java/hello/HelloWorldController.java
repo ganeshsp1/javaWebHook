@@ -45,6 +45,6 @@ public class HelloWorldController {
 		}	 catch (IOException e) {
 			e.printStackTrace();
 		}
-        return new WebhookResponse("Hello_fromSystem! "+  aiRQ.getStatus(), url ,result.getAction());        
+        return new WebhookResponse("Hello_fromSystem! ", url ,result.getAction());        
     }
 }
