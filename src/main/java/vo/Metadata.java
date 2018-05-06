@@ -1,11 +1,18 @@
 package main.java.vo;
+                 
 public class Metadata
 {
     private String intentId;
 
+    private MatchedParameters[] matchedParameters;
+
+    private String nluResponseTime;
+
     private String webhookUsed;
 
     private String intentName;
+
+    private String isResponseToSlotfilling;
 
     private String webhookForSlotFillingUsed;
 
@@ -17,6 +24,26 @@ public class Metadata
     public void setIntentId (String intentId)
     {
         this.intentId = intentId;
+    }
+
+    public MatchedParameters[] getMatchedParameters ()
+    {
+        return matchedParameters;
+    }
+
+    public void setMatchedParameters (MatchedParameters[] matchedParameters)
+    {
+        this.matchedParameters = matchedParameters;
+    }
+
+    public String getNluResponseTime ()
+    {
+        return nluResponseTime;
+    }
+
+    public void setNluResponseTime (String nluResponseTime)
+    {
+        this.nluResponseTime = nluResponseTime;
     }
 
     public String getWebhookUsed ()
@@ -39,6 +66,16 @@ public class Metadata
         this.intentName = intentName;
     }
 
+    public String getIsResponseToSlotfilling ()
+    {
+        return isResponseToSlotfilling;
+    }
+
+    public void setIsResponseToSlotfilling (String isResponseToSlotfilling)
+    {
+        this.isResponseToSlotfilling = isResponseToSlotfilling;
+    }
+
     public String getWebhookForSlotFillingUsed ()
     {
         return webhookForSlotFillingUsed;
@@ -52,6 +89,6 @@ public class Metadata
     @Override
     public String toString()
     {
-        return "ClassPojo [intentId = "+intentId+", webhookUsed = "+webhookUsed+", intentName = "+intentName+", webhookForSlotFillingUsed = "+webhookForSlotFillingUsed+"]";
+        return "ClassPojo [intentId = "+intentId+", matchedParameters = "+matchedParameters+", nluResponseTime = "+nluResponseTime+", webhookUsed = "+webhookUsed+", intentName = "+intentName+", isResponseToSlotfilling = "+isResponseToSlotfilling+", webhookForSlotFillingUsed = "+webhookForSlotFillingUsed+"]";
     }
 }
