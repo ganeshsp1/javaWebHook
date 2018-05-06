@@ -13,6 +13,8 @@ public class Data
 
     private AvailableSurfaces[] availableSurfaces;
 
+    private String update_id;
+
     public Surface getSurface ()
     {
         return surface;
@@ -71,6 +73,15 @@ public class Data
     public void setAvailableSurfaces (AvailableSurfaces[] availableSurfaces)
     {
         this.availableSurfaces = availableSurfaces;
+    }
+    public String getUpdate_id ()
+    {
+        return update_id;
+    }
+
+    public void setUpdate_id (String update_id)
+    {
+        this.update_id = update_id;
     }
 
     @Override
